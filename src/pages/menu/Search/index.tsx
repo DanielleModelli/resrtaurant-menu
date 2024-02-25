@@ -2,15 +2,16 @@ import styles from './Search.module.scss';
 import { CgSearch } from 'react-icons/cg';
 
 interface Props {
-    busca: string;
-    setBusca: React.Dispatch<React.SetStateAction<string>>;
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
-export default function Search({ busca, setBusca}: Props) {
+export default function Search({ search, setSearch}: Props) {
     return (
         <div className={styles.search}>
             <input 
-                value={busca}
-                onChange={(event) => setBusca(event.target.value)}
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder='Buscar'
             />
             <CgSearch
                 size={20}

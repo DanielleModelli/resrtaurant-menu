@@ -3,10 +3,13 @@ import Search from './Search';
 import styles from './Menu.module.scss';
 import { ReactComponent as Logo} from 'assets/logo.svg';
 import Filter from './Filter';
+import Organizer from './Organizer';
+import Items from './Items';
 
 export default function Menu() {
-    const [busca, setBusca] = useState("");
+    const [search, setSearch] = useState("");
     const [filter, setFilter] = useState<number | null>(null);
+    const [organizer, setOrganizer] = useState("");
     return (
         <main>
             <nav className={styles.logo}>
@@ -19,10 +22,12 @@ export default function Menu() {
             </header>
             <section className={styles.menu}>
                 <h3 className={styles.menu__title}>Cardápio</h3>
-                <Search busca={busca} setBusca={setBusca}/>
+                <Search search={search} setSearch={setSearch}/>
                 <div className={styles.menu__filters}>
                     <Filter filter={filter} setFilter={setFilter} />
+                    <Organizer organizer={organizer} setOrganizer={setOrganizer} />
                 </div>
+                <Items />
             </section>
         </main>
     )

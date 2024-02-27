@@ -6,17 +6,17 @@ interface Props {
     setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 export default function Search({ search, setSearch}: Props) {
-    return (
-        <div className={styles.search}>
-            <input 
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-                placeholder='Buscar'
-            />
-            <CgSearch
-                size={20}
-                color='#4c4d5e'
-            />
-        </div>
-    )
+  return (
+    <div className={styles.search}>
+      <input 
+        value={search}
+        onChange={(event) => setSearch(event.target.value)}
+        placeholder='Buscar'
+      />
+      <CgSearch
+        size={20}
+        color='#4c4d5e'
+      />
+    </div>
+  );
 }
